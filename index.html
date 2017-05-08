@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='theme.css' type='text/css' />
+    <link rel='stylesheet' href='normalize.css' type='text/css' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  </head>
+  <body>
+    <div id='top-bar'>
+      <ul>
+        <li>
+          <div id='hamburger'>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </li>
+        <!--<li>
+          <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=30%C3%9730&w=30&h=30' />
+        </li>-->
+        <li>
+          <svg id='minimize' width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='2px' y='22' height='6' width='26' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'></rect>
+           </g>
+          </svg>
+        </li>
+        <li>
+          <svg id='restore' width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='5' y='2' width='23' height='23' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'/>
+            <rect x='0' y='7' width='23' height='23' fill='#000000'/>
+           </g>
+          </svg>
+        </li>
+        <li>
+          <svg id='maximize' width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='7' y='0' width='23' height='23' fill='#000000'/>
+            <rect x='2' y='5' width='23' height='23' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'/>
+           </g>
+          </svg>
+        </li>
+        <li>
+          <svg id='maximize' width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='0' y='15' width='30' height='4' fill='#000000'/>
+            <rect x='0' y='15' width='30' height='4' fill='#000000' transform = "translate(100, 100) rotate(45)"/>
+           </g>
+          </svg>
+        </li>
+      </ul>
+    </div>
+    <div id='menu'>
+      <div id='menu-text' class='list'>
+        <ul>
+          <li class='selected'>Home</li>
+          <a href='github.html' class='silent-link context-link'><li>Github</li></a>
+          <a href='https://github.com/BitNetwork/Tilde' class='silent-link context-link'><li>Tilde (Discord)</li></a>
+          <a href='speed_reading.html' class='silent-link context-link'><li>Speed Reading</li></a>
+          <a href='config.html' class='silent-link context-link'><li>Config</li></a>
+        </ul>
+      </div>
+    </div>
+    <div id='context-menu'>
+      <div class='list'>
+        <ul>
+          <li>Copy</li>
+          <li>Cut</li>
+          <li>Paste</li>
+          <a class='silent-link' href='' target='_blank'><li id='open-in-new-tab'>Open In New Tab</li></a>
+        </ul>
+      </div>
+    </div>
+    <div id='content'>
+
+      <h1>Hi!</h1>
+      <p>I make stuff.</p>
+      <!--<h1>The lazy brown fox jumps over... ah fuck it.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel ultrices purus. Cras porttitor dolor ante. Sed lacinia ipsum rutrum venenatis auctor. Curabitur nec ornare elit. Fusce nec purus sit amet risus consectetur cursus. Curabitur eleifend quam in varius feugiat. Suspendisse a ante sed turpis fermentum malesuada. Curabitur dapibus augue ex, ut vehicula lacus tincidunt sed. Aliquam eget erat sed tortor porta sollicitudin. Cras dolor neque, cursus eget nulla sit amet, viverra rhoncus lacus. Praesent bibendum massa velit, in iaculis diam malesuada in.</p>
+      <p>Etiam eu convallis lectus. Duis egestas sagittis justo, et auctor arcu facilisis ac. Etiam fermentum, dui eget tristique feugiat, eros enim cursus nulla, nec convallis eros leo id metus. Vivamus pharetra, metus sit amet viverra tempor, urna orci imperdiet nibh, et semper augue ante ac nulla. Aenean rhoncus sapien velit, sit amet convallis lectus tempor in. Proin accumsan molestie sodales. Donec bibendum blandit nunc nec dapibus.</p>
+      <p>Duis lacinia, enim at dictum posuere, tellus ipsum sollicitudin lectus, sed rutrum erat velit at tellus. Praesent ut elit quis nisl commodo fermentum quis id magna. Phasellus vel imperdiet ipsum, sed consequat elit. Suspendisse blandit, velit in dictum sodales, mauris lectus scelerisque quam, ut egestas eros tellus in velit. Praesent nisi ligula, posuere vel lacus ut, luctus gravida eros. In vel magna id elit facilisis volutpat at ut massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas vehicula varius quam, in dapibus purus ornare in. Phasellus in enim tortor. Maecenas sapien metus, laoreet et diam ac, tincidunt iaculis diam. Ut scelerisque efficitur justo, sit amet scelerisque sem euismod eget. Nam vel egestas nulla, ullamcorper pretium odio. Nunc interdum nisi in dui viverra varius.</p>
+      <p>In varius nisi id magna imperdiet, a viverra elit venenatis. Fusce convallis pulvinar sapien, ac egestas nulla ultricies a. Morbi sem elit, fringilla sed odio a, fringilla aliquam justo. Cras facilisis suscipit nisl, sed aliquet nunc tempor nec. Nulla dapibus tempus ipsum. Suspendisse quis finibus est, et laoreet nibh. Phasellus pulvinar mi metus, ut tincidunt orci efficitur sed. Etiam rutrum dapibus leo a lacinia. Fusce maximus, purus et sollicitudin luctus, orci dolor cursus diam, sed tincidunt neque justo vel mauris. Pellentesque tincidunt luctus enim, ac congue ligula eleifend elementum. Integer ullamcorper sapien massa, ut faucibus est elementum sodales. Ut vitae euismod leo, quis pellentesque enim. Vivamus feugiat metus in purus iaculis commodo. Aliquam non ante auctor, cursus sapien quis, tempus elit. Integer eu nunc vel velit pharetra semper.</p>
+      <p>Aenean eget libero quis ex tincidunt tristique. Phasellus bibendum commodo nisi sit amet consequat. Integer pretium feugiat neque ornare pharetra. Suspendisse potenti. Fusce at elementum ligula. Etiam sodales lorem faucibus ipsum vehicula mattis. Aenean nec libero eu ante vestibulum tristique. Sed quam mi, dapibus ut facilisis eget, rutrum et justo. Vivamus eget commodo mi. Nullam sit amet ex urna.</p>-->
+    </div>
+    <script src='main.js'></script>
+  </body>
+</html>

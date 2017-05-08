@@ -1,0 +1,597 @@
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Raleway"), local("Raleway-Thin"), url("./resources/Raleway-Thin.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 100;
+  src: local("Raleway"), local("Raleway-ThinItalic"), url("./resources/Raleway-ThinItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Raleway"), local("Raleway-ExtraLight"), url("./resources/Raleway-ExtraLight.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Raleway"), local("Raleway-ExtraLightItalic"), url("./resources/Raleway-ExtraLightItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Raleway"), local("Raleway-Light"), url("./resources/Raleway-Light.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Raleway"), local("Raleway-LightItalic"), url("./resources/Raleway-LightItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"), url("./resources/Raleway-Regular.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Italic"), url("./resources/Raleway-Italic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Raleway"), local("Raleway-Medium"), url("./resources/Raleway-Medium.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 500;
+  src: local("Raleway"), local("Raleway-MediumItalic"), url("./resources/Raleway-MediumItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Raleway"), local("Raleway-SemiBold"), url("./resources/Raleway-SemiBold.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Raleway"), local("Raleway-SemiBoldItalic"), url("./resources/Raleway-SemiBoldItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Raleway"), local("Raleway-Bold"), url("./resources/Raleway-Bold.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Raleway"), local("Raleway-BoldItalic"), url("./resources/Raleway-BoldItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Raleway"), local("Raleway-ExtraBold"), url("./resources/Raleway-ExtraBold.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 800;
+  src: local("Raleway"), local("Raleway-ExtraBoldItalic"), url("./resources/Raleway-ExtraBoldItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Raleway"), local("Raleway-Black"), url("./resources/Raleway-BlackBold.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 900;
+  src: local("Raleway"), local("Raleway-BlackItalic"), url("./resources/Raleway-BlackItalic.ttf") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* Body document style classes:
+  .*-color: color theme
+  .*-accent: accent color
+  .*-density: position (compact, cosy or comfortable)
+*/
+
+:root {
+  --primary-color: #222;
+  --secondary-color: #111;
+  --tertiary-color: #333;
+  --contrast-color: #fff;
+  --accent-color: #0f0;
+  --secondary-accent-color: #0d0;
+}
+
+.light-theme {
+  --primary-color: #fff;
+  --secondary-color: #ddd;
+  --tertiary-color: #eee;
+  --contrast-color: #000;
+}
+
+.dark-theme {
+  --primary-color: #222;
+  --secondary-color: #111;
+  --tertiary-color: #333;
+  --contrast-color: #fff;
+}
+
+.metro-theme {
+  --primary-color: #BBB;
+  --secondary-color: #777;
+  --tertiary-color: #999;
+  --contrast-color: #fff;
+}
+
+.lime-accent {
+  --accent-color: #0f0;
+  --secondary-accent-color: #090;
+}
+
+.teal-accent {
+  --accent-color: #0fc;
+  --secondary-accent-color: #098;
+}
+
+.red-accent {
+  --accent-color: #c00;
+  --secondary-accent-color: #900;
+}
+
+/* Leave empty */
+.compact-density {
+
+}
+
+.cosy-density {
+
+}
+
+.comfortable-density {
+
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+  font-family: Raleway, sans-serif;
+}
+
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  background-color: var(--secondary-color);
+  -webkit-app-region: drag;
+}
+
+#top-bar > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 140;
+}
+
+#top-bar > ul > li {
+  height: 30px;
+  width: 30px;
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  margin: 0 -2.5px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.compact-density #top-bar > ul > li {
+  padding: 5px;
+}
+
+.comfortable-density #top-bar > ul > li {
+  padding: 15px;
+}
+
+#hamburger {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: -9px;
+}
+
+#hamburger > div > div {
+  height: 4px;
+  width: 30px;
+  margin: 9px 0;
+  background-color: var(--accent-color);
+}
+
+#hamburger.active > div > div:nth-child(1) {
+  animation: hamburger-1 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  position: relative;
+  top: 13px;
+  transform: rotate(45deg);
+  background-color: var(--accent-color);
+}
+
+#hamburger.active > div > div:nth-child(2) {
+  animation: hamburger-2 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  opacity: 0;
+}
+
+#hamburger.active > div > div:nth-child(3) {
+  animation: hamburger-3 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  position: relative;
+  top: -13px;
+  transform: rotate(-45deg);
+  background-color: var(--accent-color);
+}
+
+#hamburger.inactive > div > div:nth-child(1) {
+  animation: hamburger-1-back 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  animation-play-state: running;
+  position: relative;
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#hamburger.inactive > div > div:nth-child(2) {
+  animation: hamburger-2-back 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  opacity: 1;
+}
+
+#hamburger.inactive > div > div:nth-child(3) {
+  animation: hamburger-3-back 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+  animation-play-state: running;
+  position: relative;
+  top: 0;
+  transform: rotate(0deg);
+}
+
+@keyframes hamburger-1 {
+  0% {
+    position: relative;
+    top: 0px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  50% {
+    position: relative;
+    top: 13px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  100% {
+    transform: rotate(45deg);
+    background-color: var(--accent-color);
+  }
+}
+
+@keyframes hamburger-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+}
+
+@keyframes hamburger-3 {
+  0% {
+    position: relative;
+    top: 0px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  50% {
+    position: relative;
+    top: -13px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  100% {
+    transform: rotate(-45deg);
+    background-color: var(--accent-color);
+  }
+}
+
+@keyframes hamburger-1-back {
+  0% {
+    position: relative;
+    top: 13px;
+    transform: rotate(45deg);
+    background-color: var(--accent-color);
+  }
+  50% {
+    position: relative;
+    top: 13px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  100% {
+    position: relative;
+    top: 0px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+}
+
+@keyframes hamburger-2-back {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-3-back {
+  0% {
+    position: relative;
+    top: -13px;
+    transform: rotate(-45deg);
+    background-color: var(--accent-color);
+  }
+  50% {
+    position: relative;
+    top: -13px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+  100% {
+    position: relative;
+    top: 0px;
+    transform: rotate(0deg);
+    background-color: var(--accent-color);
+  }
+}
+
+#minimize rect {
+  stroke: var(--accent-color);
+}
+
+#restore rect {
+  stroke: var(--accent-color);
+}
+
+#restore rect:nth-child(2) {
+  fill: var(--accent-color);
+}
+
+#maximize rect {
+  stroke: var(--accent-color);
+}
+
+#maximize rect:nth-child(1) {
+  fill: var(--accent-color);
+}
+
+#menu {
+  width: 250px;
+  height: 200px;
+  background-color: var(--secondary-color);
+  position: fixed;
+  left: -300px;
+  top: 50px;
+  z-index: 130;
+}
+
+#menu.active {
+  animation: menu 0.5s cubic-bezier(.19, 1, .22, 1) /*cubic-bezier(0.215, 0.61, 0.355, 1)*/;
+  left: 0;
+}
+
+#menu.inactive {
+  animation: menu-back 0.5s cubic-bezier(.19, 1, .22, 1) /*cubic-bezier(0.215, 0.61, 0.355, 1)*/;
+  left: -300px;
+}
+
+.compact-density #menu {
+  top: 40px;
+}
+
+.comfortable-density #menu {
+  top: 60px;
+}
+
+@keyframes menu {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes menu-back {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -300px;
+  }
+}
+
+#menu-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#context-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 200px;
+  width: 150px;
+  background-color: var(--secondary-accent-color);
+  z-index: 140;
+}
+
+#context-menu > .list {
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  width: calc(100% - 160px);
+  height: auto;
+  display: table;
+  padding: 80px;
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--tertiary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+}
+
+.list {
+  padding: 0;
+  height: 250px;
+  width: 250px;
+  overflow-y: auto;
+}
+
+.list > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list > ul li {
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.list > ul li:hover {
+  background-color: var(--tertiary-color);
+}
+
+.list > ul li:active {
+  background-color: var(--tertiary-color);
+}
+
+/* Make sure to do the hover selector first, the selected item shouldn't have a hover effect. */
+.list > ul li.selected {
+  background-color: var(--secondary-accent-color);
+  cursor: default;
+}
+
+.list > ul li.title {
+  background-color: var(--secondary-color);
+  cursor: default;
+}
+
+.compact-density .list > ul li {
+  padding: 5px;
+}
+
+.comfortable-density .list > ul li {
+  padding: 15px;
+}
+
+/*
+.list-inline {
+  width: 604px;
+}
+
+.list-inline > ul > li {
+  display: inline-block;
+  width: 250px;
+}
+*/
+
+.silent-link {
+  color: inherit;
+  text-decoration: none;
+}

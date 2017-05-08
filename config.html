@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='./theme.css' type='text/css' />
+    <link rel='stylesheet' href='./normalize.css' type='text/css' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  </head>
+  <body>
+    <div id='menu'>
+      <div id='mini-icon'>
+        <ul>
+          <li>
+            <div id='hamburger'>
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </li>
+          <!--<li>
+            <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=30&h=30' />
+          </li>
+          <li>
+            <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=30&h=30' />
+          </li>-->
+        </ul>
+      </div>
+      <div id='menu-text' class='list'>
+        <ul>
+          <a href='index.html' class='silent-link context-link'><li>Home</li></a>
+          <a href='github.html' class='silent-link context-link'><li>Github</li></a>
+          <a href='https://github.com/BitNetwork/Tilde' class='silent-link context-link'><li>Tilde (Discord)</li></a>
+          <a href='speed_reading.html' class='silent-link context-link'><li>Speed Reading</li></a>
+          <li class='selected'>Config</li>
+        </ul>
+      </div>
+    </div>
+    <div id='context-menu'>
+      <div class='list'>
+        <ul>
+          <li>Copy</li>
+          <li>Cut</li>
+          <li>Paste</li>
+          <a class='silent-link' href='' target='_blank'><li id='open-in-new-tab'>Open In New Tab</li></a>
+        </ul>
+      </div>
+    </div>
+    <div id='content'>
+
+      <h1>Config</h1>
+
+      <div id='theme-select' class='list'>
+        <ul>
+          <li class='title'>Theme</li>
+          <li class='selected' onclick='changeTheme(this);' data-item='dark'>Dark</li>
+          <li onclick='changeTheme(this);' data-item='light'>Light</li>
+          <li onclick='changeTheme(this);' data-item='metro'>Metro</li>
+        </ul>
+      </div>
+
+      <div id='accent-select' class='list'>
+        <ul>
+          <li class='title'>Accent</li>
+          <li class='selected' onclick='changeAccent(this);' data-item='lime'>Lime</li>
+          <li onclick='changeAccent(this);' data-item='teal'>Teal</li>
+          <li onclick='changeAccent(this);' data-item='red'>Red</li>
+        </ul>
+      </div>
+
+      <div id='density-select' class='list'>
+        <ul>
+          <li class='title'>Density</li>
+          <li onclick='changeDensity(this);' data-item='compact'>Compact</li>
+          <li class='selected' onclick='changeDensity(this);' data-item='cozy'>Cozy</li>
+          <li onclick='changeDensity(this);' data-item='comfortable'>Comfortable</li>
+        </ul>
+      </div>
+
+      <script>
+        function changeTheme(element) {
+          let densitySelect = document.getElementById("theme-select");
+          core.data.theme = element.dataset.item;
+          core.saveData();
+
+
+          for (let i = 0; densitySelect.firstElementChild.children.length > i; i++) {
+            let child = densitySelect.firstElementChild.children[i];
+            if (child.classList.contains("selected")) {
+              child.classList.remove("selected");
+            }
+          }
+
+          document.body.classList.forEach(function(item) {
+            if (item.search(/\-theme$/) !== -1) {
+              document.body.classList.remove(item);
+            }
+          });
+
+          document.body.classList.add(element.dataset.item + "-theme");
+          element.classList.add("selected");
+        }
+
+        function changeAccent(element) {
+          let densitySelect = document.getElementById("accent-select");
+          core.data.accent = element.dataset.item;
+          core.saveData();
+
+
+          for (let i = 0; densitySelect.firstElementChild.children.length > i; i++) {
+            let child = densitySelect.firstElementChild.children[i];
+            if (child.classList.contains("selected")) {
+              child.classList.remove("selected");
+            }
+          }
+
+          document.body.classList.forEach(function(item) {
+            if (item.search(/\-accent$/) !== -1) {
+              document.body.classList.remove(item);
+            }
+          });
+
+          document.body.classList.add(element.dataset.item + "-accent");
+          element.classList.add("selected");
+        }
+
+        function changeDensity(element) {
+          let densitySelect = document.getElementById("density-select");
+          core.data.density = element.dataset.item;
+          core.saveData();
+
+
+          for (let i = 0; densitySelect.firstElementChild.children.length > i; i++) {
+            let child = densitySelect.firstElementChild.children[i];
+            if (child.classList.contains("selected")) {
+              child.classList.remove("selected");
+            }
+          }
+
+          document.body.classList.forEach(function(item) {
+            if (item.search(/\-density$/) !== -1) {
+              document.body.classList.remove(item);
+            }
+          });
+
+          document.body.classList.add(element.dataset.item + "-density");
+          element.classList.add("selected");
+        }
+      </script>
+    </div>
+    <script src='./main.js'></script>
+  </body>
+</html>
