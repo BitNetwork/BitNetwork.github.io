@@ -1,11 +1,19 @@
 {
-  "name": "github-pages",
+  "name": "bitnetwork.github.io",
   "version": "0.1.0",
   "description": "",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/npm/npm.git"
+  },
+  "dependencies": {
+    "electron": "^1.6.7"
+  },
   "main": "app.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bit",
-  "license": "ISC"
+  "license": "UNLICENSED"
 }
