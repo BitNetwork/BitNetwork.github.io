@@ -68,24 +68,35 @@ if (environment === "browser") {
     }
   }
 
-  document.getElementById("minimize").addEventListener("click", function(event) {
+  document.getElementById("minimize-window").firstElementChild.addEventListener("click", function(event) {
     window.minimize();
   });
 
-  document.getElementById("restore").addEventListener("click", function(event) {
-    window.restore();
+  function windowRestoreHandler() {
+    window.unmaximize();
     if (window.isMaximized() === false) {
-      document.getElementById("maximize").parentElement.style.display = "inline-flex";
-      document.getElementById("restore").parentElement.style.display = "none";
+      document.getElementById("maximize-window").style.display = "inline-flex";
+      document.getElementById("restore-window").style.display = "none";
     }
-  });
+  };
+  document.getElementById("restore-window").firstElementChild.addEventListener("click", windowRestoreHandler);
+  window.addListener("unmaximize", windowRestoreHandler);
 
-  document.getElementById("maximize").addEventListener("click", function(event) {
+  function windowMaximizeHandler() {
     window.maximize();
     if (window.isMaximized()) {
-      document.getElementById("maximize").parentElement.style.display = "none";
-      document.getElementById("restore").parentElement.style.display = "inline-flex";
+      document.getElementById("maximize-window").style.display = "none";
+      document.getElementById("restore-window").style.display = "inline-flex";
     }
+  };
+  document.getElementById("maximize-window").firstElementChild.addEventListener("click", windowMaximizeHandler);
+  window.addListener("maximize", windowMaximizeHandler);
+  if (window.isMaximized()) {
+    windowMaximizeHandler();
+  }
+
+  document.getElementById("close-window").firstElementChild.addEventListener("click", function(event) {
+    window.close();
   });
 
 }
@@ -150,7 +161,6 @@ for (let i = 0; i < links.length; i++) {
 }
 
 document.body.addEventListener("mousemove", function(event) {
-  //console.log(event.target);
   if (context.style.display === "block") {
     var target = event.target;
     while (target.tagName !== "BODY") {
