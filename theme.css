@@ -143,7 +143,12 @@
 }
 
 /* Body document style classes:
+
   .*-color: color theme
+  --primary-color: used for general and content backgrounds
+  --secondary-color: used for menu and interactive backgrounds
+  --tertiary-color: used for hover events and scrollbars
+
   .*-accent: accent color
   .*-density: position (compact, cosy or comfortable)
 */
@@ -167,6 +172,13 @@
 .dark-theme {
   --primary-color: #222;
   --secondary-color: #111;
+  --tertiary-color: #333;
+  --contrast-color: #fff;
+}
+
+.darker-theme {
+  --primary-color: #111;
+  --secondary-color: #222;
   --tertiary-color: #333;
   --contrast-color: #fff;
 }
@@ -246,6 +258,10 @@ html, body {
   padding: 10px;
   cursor: pointer;
   -webkit-app-region: no-drag;
+}
+
+#top-bar > ul > li:hover {
+  background-color: var(--tertiary-color)
 }
 
 .compact-density #top-bar > ul > li {
@@ -417,23 +433,15 @@ html, body {
   }
 }
 
-#minimize rect {
+#minimize-window, #restore-window, #maximize-window, #close-window {
+  float: right;
+}
+
+#minimize-window rect, #restore-window rect, #maximize-window rect, #close-window line {
   stroke: var(--accent-color);
 }
 
-#restore rect {
-  stroke: var(--accent-color);
-}
-
-#restore rect:nth-child(2) {
-  fill: var(--accent-color);
-}
-
-#maximize rect {
-  stroke: var(--accent-color);
-}
-
-#maximize rect:nth-child(1) {
+#restore-window rect:nth-child(2), #maximize-window rect:nth-child(1) {
   fill: var(--accent-color);
 }
 
