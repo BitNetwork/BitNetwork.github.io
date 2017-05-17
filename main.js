@@ -79,6 +79,7 @@ if (environment === "browser") {
       document.getElementById("restore-window").style.display = "none";
     }
   };
+
   document.getElementById("restore-window").firstElementChild.addEventListener("click", windowRestoreHandler);
   window.addListener("unmaximize", windowRestoreHandler);
 
@@ -89,6 +90,7 @@ if (environment === "browser") {
       document.getElementById("restore-window").style.display = "inline-flex";
     }
   };
+
   document.getElementById("maximize-window").firstElementChild.addEventListener("click", windowMaximizeHandler);
   window.addListener("maximize", windowMaximizeHandler);
   if (window.isMaximized()) {
@@ -97,6 +99,20 @@ if (environment === "browser") {
 
   document.getElementById("close-window").firstElementChild.addEventListener("click", function(event) {
     window.close();
+  });
+
+  document.addEventListener("keydown", function(event) {
+    console.dir(event);
+    if ((event.code === "KeyR" && event.ctrlKey) || event.code === "F5") {
+      event.preventDefault();
+    } else if (event.code === "F11") {
+      event.preventDefault();
+      if (window.isMaximized()) {
+        window.unmaximize();
+      } else {
+        window.maximize();
+      }
+    }
   });
 
 }

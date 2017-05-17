@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheet' href='./theme.css' type='text/css' />
-    <link rel='stylesheet' href='./normalize.css' type='text/css' />
+    <link rel='stylesheet' href='theme.css' type='text/css' />
+    <link rel='stylesheet' href='normalize.css' type='text/css' />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
   </head>
   <body>
-    <div id='menu'>
-      <div id='mini-icon'>
-        <ul>
-          <li>
-            <div id='hamburger'>
-              <div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
+    <div id='top-bar'>
+      <ul>
+        <li>
+          <div id='hamburger'>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
-          </li>
-          <!--<li>
-            <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=30&h=30' />
-          </li>
-          <li>
-            <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=50%C3%9750&w=30&h=30' />
-          </li>-->
-        </ul>
-      </div>
+          </div>
+        </li>
+        <!--<li>
+          <img src='https://placeholdit.imgix.net/~text?txtsize=6&txt=30%C3%9730&w=30&h=30' />
+        </li>-->
+        <li id='close-window'>
+          <svg width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <line stroke='#000' transform='rotate(90 15, 15)' y2='28.5' x2='28.5' y1='1.5' x1='1.5' stroke-width='4' fill='none'/>
+            <line stroke='#000' y2='28.5' x2='28.5' y1='1.5' x1='1.5' stroke-width='4' fill='none'/>
+           </g>
+          </svg>
+        </li>
+        <li id='maximize-window'>
+          <svg width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='7' y='0' width='23' height='23' fill='#000000'/>
+            <rect x='2' y='5' width='23' height='23' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'/>
+           </g>
+          </svg>
+        </li>
+        <li id='restore-window'>
+          <svg width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='5' y='2' width='23' height='23' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'/>
+            <rect x='0' y='7' width='23' height='23' fill='#000000'/>
+           </g>
+          </svg>
+        </li>
+        <li id='minimize-window'>
+          <svg width='30' height='30' xmlns='http://www.w3.org/2000/svg'>
+           <g>
+            <rect x='2px' y='22' height='6' width='26' stroke='#000000' fill='transparent' stroke-width='4' stroke-linecap='square'></rect>
+           </g>
+          </svg>
+        </li>
+      </ul>
+    </div>
+    <div id='menu'>
       <div id='menu-text' class='list'>
         <ul>
-          <a href='index.html' class='silent-link context-link'><li>Home</li></a>
-          <li class='selected'>Github</li>
+          <li class='selected'>Home</li>
+          <a href='github.html' class='silent-link context-link'><li>Github</li></a>
           <a href='https://github.com/BitNetwork/Tilde' class='silent-link context-link'><li>Tilde (Discord)</li></a>
           <a href='speed_reading.html' class='silent-link context-link'><li>Speed Reading</li></a>
           <a href='config.html' class='silent-link context-link'><li>Config</li></a>
@@ -55,62 +83,63 @@
         <ul></ul>
       </div>
 
+      <style>
+        #github_repos {
+          height: 350px;
+        }
+      </style>
+      <script>
+        function fetch(url, options) {
+          return new Promise(function(accept, reject) {
+            if (typeof options === "undefined") {
+              options = {};
+            }
+
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+              if (request.readyState === 4 && request.status === 200){
+                accept(request);
+              } else if (request.readyState === 4) {
+                reject(request);
+              }
+            }
+            request.open(options.method || "GET", url, true);
+            request.send();
+          });
+        }
+
+        function repoCallback(text) {
+          let json = JSON.parse(text);
+
+
+          for (let i = 0; i < json.length; i++) {
+            let repo = json[i];
+            let element = document.createElement("LI");
+            element.innerHTML = repo.name + (repo.fork ? " <i>(fork)</i>" : "");
+            element.onclick = function() {
+              location.href = repo.svn_url;
+            };
+            document.getElementById("github_repos").firstElementChild.appendChild(element);
+          }
+        }
+
+        if (typeof localStorage.githubRepos !== "undefined" && Date.now() - JSON.parse(localStorage.githubRepos).fetched < 3600000) {
+          repoCallback(JSON.parse(localStorage.githubRepos).json);
+        } else {
+
+          fetch("https://api.github.com/users/BitNetwork/repos").then(function(request) {
+
+            localStorage.githubRepos = JSON.stringify({
+              fetched: Date.now(),
+              json: request.responseText
+            });
+
+            repoCallback(request.responseText);
+          });
+        }
+      </script>
+
     </div>
     <script src='./main.js'></script>
-    <style>
-      #github_repos {
-        height: 350px;
-      }
-    </style>
-    <script>
-      function fetch(url, options) {
-        return new Promise(function(accept, reject) {
-          if (typeof options === "undefined") {
-            options = {};
-          }
-
-          let request = new XMLHttpRequest();
-          request.onreadystatechange = function() {
-            if (request.readyState === 4 && request.status === 200){
-              accept(request);
-            } else if (request.readyState === 4) {
-              reject(request);
-            }
-          }
-          request.open(options.method || "GET", url, true);
-          request.send();
-        });
-      }
-
-      function repoCallback(text) {
-        let json = JSON.parse(text);
-
-
-        for (let i = 0; i < json.length; i++) {
-          let repo = json[i];
-          let element = document.createElement("LI");
-          element.innerHTML = repo.name + (repo.fork ? " <i>(fork)</i>" : "");
-          element.onclick = function() {
-            location.href = repo.svn_url;
-          };
-          document.getElementById("github_repos").firstElementChild.appendChild(element);
-        }
-      }
-
-      if (typeof localStorage.githubRepos !== "undefined" && Date.now() - JSON.parse(localStorage.githubRepos).fetched < 3600000) {
-        repoCallback(JSON.parse(localStorage.githubRepos).json);
-      } else {
-
-        fetch("https://api.github.com/users/BitNetwork/repos").then(function(request) {
-
-          localStorage.githubRepos = JSON.stringify({
-            fetched: Date.now(),
-            json: request.responseText
-          });
-
-          repoCallback(request.responseText);
-        });
-      }
-    </script>
   </body>
 </html>
