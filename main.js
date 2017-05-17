@@ -4,8 +4,10 @@
 // TO-DO: Http requests, database perodic saves
 
 // Specify runtime environment. Do this automatically pls...
+const environment = (typeof window === "object" && typeof window.process === "object" && typeof window.process.type !== "undefined" ? "electron" : "browser");
+// const environment = "electron";
 // const environment = "browser";
-const environment = "electron";
+
 
 var core = {
   data: {}
