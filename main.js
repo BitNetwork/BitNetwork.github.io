@@ -181,12 +181,26 @@ for (let i = 0; i < links.length; i++) {
   let link = links[i];
 
   link.addEventListener("mousedown", function(event) {
+    console.log(event);
     if (event.button === 2) { // Right click
-      event.preventDefault();
-      context.style.left = event.clientX + "px";
-      context.style.top = event.clientY + "px";
-      document.getElementById("open-in-new-tab").href = link.href;
-      context.style.display = "block";
+      for (let i = 0; i < event.path.length; i++) {
+        let element = event.path[i];
+        if (typeof element.classList !== "undefined") {
+          for (let j = 0; j < element.classList.length; j++) {
+            let className = element.classList[j];
+            console.log(`${element}.${className}`)
+            if (className === "context-link") {
+              console.log(element.href)
+              event.preventDefault();
+              context.style.left = event.clientX + "px";
+              context.style.top = event.clientY + "px";
+              document.getElementById("open-in-new-tab").href = element.href;
+              context.style.display = "block";
+              break;
+            }
+          }
+        }
+      }
     }
   });
 }
