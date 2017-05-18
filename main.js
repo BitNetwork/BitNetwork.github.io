@@ -103,6 +103,19 @@ if (environment === "browser") {
     window.close();
   });
 
+  document.getElementById("minimize-window").style.display = "inline-flex";
+  document.getElementById("restore-window").style.display = "inline-flex";
+  document.getElementById("maximize-window").style.display = "inline-flex";
+  document.getElementById("close-window").style.display = "inline-flex";
+
+  if (window.isMaximized()) {
+    document.getElementById("maximize-window").style.display = "none";
+      document.getElementById("restore-window").style.display = "inline-flex";
+  } else {
+    document.getElementById("maximize-window").style.display = "inline-flex";
+    document.getElementById("restore-window").style.display = "none";
+  }
+
   document.addEventListener("keydown", function(event) {
     console.dir(event);
     if ((event.code === "KeyR" && event.ctrlKey) || event.code === "F5") {
@@ -119,11 +132,11 @@ if (environment === "browser") {
 
 }
 
-core.data = new Proxy(core.data, {
+/*core.data = new Proxy(core.data, {
   set: function(target, name) {
     core.saveData();
   }
-});
+});*/
 
 let theme = typeof core.data.theme === "undefined" ? "dark" : core.data.theme;
 let accent = typeof core.data.accent === "undefined" ? "lime" : core.data.accent;
