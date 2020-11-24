@@ -7,7 +7,7 @@
     "url" : "https://github.com/npm/npm.git"
   },
   "dependencies": {
-    "electron": "^1.6.7"
+    "electron": "^7.2.4""
   },
   "main": "app.js",
   "scripts": {
